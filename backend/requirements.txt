@@ -1,0 +1,7 @@
+fastapi
+oracledb
+python-dotenv
+uvicorn
+mcp>=1.30,<2
+httpx
+psutil

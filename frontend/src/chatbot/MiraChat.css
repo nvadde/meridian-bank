@@ -1,0 +1,115 @@
+.mira-widget {
+  --mira-green: #173e32;
+  --mira-border: #d5e0d7;
+  position: fixed;
+  right: max(1.25rem, env(safe-area-inset-right));
+  bottom: max(1.25rem, env(safe-area-inset-bottom));
+  z-index: 20;
+  display: grid;
+  justify-items: end;
+  gap: .7rem;
+}
+
+.mira-launcher, .mira-send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  background: var(--mira-green);
+  color: #fff;
+  border: 1px solid var(--mira-green);
+  border-radius: .65rem;
+  padding: .55rem .85rem;
+  min-height: 2.7rem;
+  font-size: .9rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.mira-launcher {
+  min-height: 3rem;
+  padding-inline: .85rem 1.15rem;
+  border-radius: 2rem;
+  box-shadow: 0 .25rem .8rem #19332935;
+}
+
+.mira-launcher:hover, .mira-send:hover:enabled { background: #285644; }
+.mira-symbol { display: grid; place-items: center; width: 1.35rem; height: 1rem; border: 1px solid #ceded1; border-radius: .32rem; line-height: .55; letter-spacing: .04em; }
+
+.mira-window {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(25rem, calc(100vw - 2.5rem));
+  height: min(34rem, calc(100dvh - 6.3rem));
+  min-height: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid var(--mira-border);
+  border-radius: 1rem;
+  box-shadow: 0 .6rem 2.2rem #152d2840;
+}
+
+.mira-window[hidden] { display: none; }
+
+.mira-header {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  padding: .85rem 1rem;
+  background: #18362e;
+  color: white;
+}
+
+.mira-avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.15rem;
+  height: 2.15rem;
+  border: 1px solid #87a18f;
+  border-radius: .55rem;
+  color: #f1e9c8;
+  font-family: Georgia, serif;
+  font-size: 1.18rem;
+}
+
+.mira-heading { min-width: 0; flex: 1; }
+.mira-heading h2 { font-size: 1.12rem; }
+.mira-heading h2:focus { outline-color: #abc7b5; }
+.mira-heading p { margin-top: .12rem; color: #e4efe7; font-size: .875rem; overflow-wrap: anywhere; }
+.mira-close { flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border: 0; background: transparent; border-radius: .5rem; color: white; font-size: 1.55rem; }
+.mira-close:hover { background: #ffffff1a; }
+
+.mira-transcript {
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8rem;
+  padding: 1rem;
+  background: #f7f9f6;
+}
+
+.mira-turn { max-width: 92%; }
+.mira-bubble { border-radius: .8rem .8rem .8rem .25rem; padding: .65rem .8rem; background: #fff; border: 1px solid #dae5de; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 1rem; line-height: 1.45; }
+.mira-user { align-self: flex-end; }
+.mira-user .mira-bubble { border-radius: .8rem .8rem .25rem .8rem; background: #dceee2; color: #153b2c; border-color: #d1e7d8; }
+.mira-agent { color: #3c6655; font-size: .8125rem; font-weight: 650; margin: .3rem .2rem 0; }
+.mira-wait { color: #51675c; font-size: .875rem; }
+
+.mira-controls { display: grid; gap: .6rem; border-top: 1px solid var(--mira-border); padding: .7rem .85rem .85rem; }
+.mira-quick { display: flex; gap: .35rem; flex-wrap: wrap; }
+.mira-quick button { color: var(--mira-green); background: #eff5f0; border: 1px solid #d6e4da; border-radius: 1.2rem; min-height: 2.1rem; padding: .35rem .62rem; font-size: .875rem; font-weight: 600; }
+.mira-quick button:enabled:hover { background: #e0eee3; }
+.mira-compose { display: flex; gap: .45rem; align-items: end; }
+.mira-compose textarea { flex: 1; min-width: 0; min-height: 2.7rem; max-height: 6rem; resize: vertical; border: 1px solid #cddbcf; border-radius: .55rem; background: #fff; padding: .6rem .65rem; font: inherit; }
+.mira-error { color: #842c26; font-size: .875rem; line-height: 1.4; }
+.mira-state { align-self: start; display: grid; justify-items: start; gap: .7rem; padding: 1.2rem; line-height: 1.45; }
+.mira-state h3 { font-size: 1.12rem; }
+.mira-state p { color: #465b50; }
+
+@media (max-width: 480px) {
+  .mira-widget { right: max(.7rem, env(safe-area-inset-right)); bottom: max(.7rem, env(safe-area-inset-bottom)); }
+  .mira-window { width: min(25rem, calc(100vw - 1.4rem)); height: min(34rem, calc(100dvh - 5.4rem)); }
+}

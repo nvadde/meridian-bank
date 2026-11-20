@@ -1,0 +1,12 @@
+# Local secrets — never commit
+credentials.json
+token.json
+.env
+.env.*
+wallet/
+frontend/node_modules/
+frontend/dist/
+
+backend/logs/
+database/wallet/
+backend/wallet/

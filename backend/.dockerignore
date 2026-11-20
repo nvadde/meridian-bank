@@ -1,0 +1,10 @@
+.env
+.env.*
+**/.env
+**/.env.*
+wallet/
+**/wallet/
+__pycache__
+**/__pycache__
+.git
+logs/
